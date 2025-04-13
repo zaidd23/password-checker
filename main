@@ -1,0 +1,79 @@
+ import java.util.Scanner;
+
+
+public class Password {
+
+    
+    
+    public static boolean test(String Password ){
+        
+        if(Password.length()<8){
+            
+            
+            return false ;
+            
+        }
+        
+        boolean uppercase=false;
+        boolean lowercase=false ;
+        boolean Digit =false ;
+        
+        for(int i=0;i<Password.length();i++){
+            
+            char c=Password.charAt(i) ;
+            
+            if(Character.isDigit(c))
+                Digit=true ;
+            
+             if(Character.isUpperCase(c))
+                uppercase=true ;
+            
+                 if(Character.isLowerCase(c))
+                lowercase=true ;
+            
+            
+            
+            
+           
+            
+            
+            
+        }
+        
+        
+        
+        return uppercase && lowercase&& Digit ;
+        
+        
+        
+       
+        
+    }
+    
+    
+    
+    public static void main(String[] args) {
+
+        
+        String password ;
+        
+        Scanner s=new Scanner(System.in) ;
+        System.out.println("enter your Password please ");    
+        password=s.nextLine() ;
+        
+        
+        boolean valid=test(password) ;
+        
+        if(valid){
+            
+            System.out.println("welcome");
+            
+        }
+        
+        else
+            System.out.println("weak password try another ");
+            
+        
+        
+    }
+}
